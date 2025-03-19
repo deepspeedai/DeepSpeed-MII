@@ -52,7 +52,7 @@ from .data_models import (
 app = FastAPI()
 load_balancer = "localhost:50050"
 tokenizer = None
-app_settings = AppSettings()
+app_settings = None
 get_bearer_token = HTTPBearer(auto_error=False)
 
 
@@ -217,7 +217,7 @@ async def create_chat_completion(request: ChatCompletionRequest):
             chunk = ChatCompletionStreamResponse(id=id,
                                                  choices=firstChoices,
                                                  model=app_settings.model_id)
-            yield f"data: {chunk.json(exclude_unset=True, ensure_ascii=False)}\n\n"
+            yield f"data: {chunk.model_dump_json(exclude_unset=True)}\n\n"
             async for response_chunk in stub.GeneratorReplyStream(requestData):
                 streamChoices = []
 
@@ -233,7 +233,7 @@ async def create_chat_completion(request: ChatCompletionRequest):
                 chunk = ChatCompletionStreamResponse(id=id,
                                                      choices=streamChoices,
                                                      model=app_settings.model_id)
-                yield f"data: {chunk.json(exclude_unset=True, ensure_ascii=False)}\n\n"
+                yield f"data: {chunk.model_dump_json(exclude_unset=True)}\n\n"
             yield "data: [DONE]\n\n"
 
         return StreamingResponse(StreamResults(), media_type="text/event-stream")
@@ -352,7 +352,7 @@ async def create_completion(request: CompletionRequest):
                     choices=streamChoices,
                     model=app_settings.model_id,
                 )
-                yield f"data: {chunk.json(exclude_unset=True, ensure_ascii=False)}\n\n"
+                yield f"data: {chunk.model_dump_json(exclude_unset=True)}\n\n"
             yield "data: [DONE]\n\n"
 
         return StreamingResponse(StreamResults(), media_type="text/event-stream")
@@ -471,6 +471,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    app_settings = AppSettings(model_id=args.model)
     # Set the deployment name
     if args.deployment_name is not None:
         app_settings.deployment_name = args.deployment_name
