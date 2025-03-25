@@ -3,10 +3,14 @@ requires = [
     "setuptools>=64",
     "wheel"
 ]
-# Use legacy backend to import local packages in setup.py
-build-backend = "setuptools.build_meta:__legacy__"
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepspeed-mii"
+dynamic = ["version", "dependencies"]
 
 [tool.setuptools.dynamic]
+version = {file = ["version.txt"]}
 dependencies = {file = ["requirements/requirements.txt"]}
 
 [project.optional-dependencies]
