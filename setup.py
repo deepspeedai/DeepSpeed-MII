@@ -8,16 +8,6 @@ import subprocess
 from setuptools import setup, find_packages
 
 
-def fetch_requirements(path):
-    with open(path, 'r') as fd:
-        return [r.strip() for r in fd.readlines()]
-
-
-install_requires = fetch_requirements('requirements/requirements.txt')
-
-extras_require = {"dev": fetch_requirements('requirements/requirements-dev.txt')}
-
-
 def command_exists(cmd):
     if sys.platform == "win32":
         result = subprocess.Popen(f'{cmd}', stdout=subprocess.PIPE, shell=True)
@@ -88,8 +78,6 @@ setup(name="deepspeed-mii",
           'Documentation': 'https://github.com/deepspeedai/DeepSpeed-MII',
           'Source': 'https://github.com/deepspeedai/DeepSpeed-MII',
       },
-      install_requires=install_requires,
-      extras_require=extras_require,
       packages=find_packages(exclude=("tests",
                                       )),
       classifiers=[

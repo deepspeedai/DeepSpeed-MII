@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          grep -E "clang-format|pre-commit" requirements/requirements-dev.txt | xargs pip install
+          grep -E "clang-format|pre-commit" pyproject.toml | xargs pip install
 
       - name: Formatting checks
         run: |

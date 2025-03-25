@@ -10,7 +10,7 @@ on:
       - 'mii/legacy/**'
       - 'tests/legacy/**'
       - '.github/workflows/nv-v100-legacy.yml'
-      - 'requirements/**'
+      - 'pyproject.toml'
       - 'setup.py'
 
 concurrency:
