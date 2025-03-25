@@ -7,7 +7,7 @@ requires = [
 build-backend = "setuptools.build_meta:__legacy__"
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = {file = ["requirements/requirements.txt"]}
 
 [project.optional-dependencies]
-dev = {file = ["requirements-dev.txt"]}
+dev = {file = ["requirements/requirements-dev.txt"]}
