@@ -10,9 +10,37 @@ build-backend = "setuptools.build_meta"
 name = "deepspeed-mii"
 dynamic = ["version", "dependencies"]
 
+[project.dependencies]
+accelerate = "*"
+asyncio = "*"
+deepspeed = ">=0.15.0"
+deepspeed-kernels = "*"
+fastapi = "*"
+fastchat = "*"
+Flask-RESTful = "*"
+grpcio = "*"
+grpcio-tools = "*"
+Pillow = "*"
+pydantic = ">=2.0.0"
+pyzmq = "*"
+safetensors = "*"
+shortuuid = "*"
+torch = "*"
+transformers = "*"
+ujson = "*"
+Werkzeug = "*"
+
 [tool.setuptools.dynamic]
 version = {file = ["version.txt"]}
-dependencies = {file = ["requirements/requirements.txt"]}
 
 [project.optional-dependencies]
-dev = {file = ["requirements/requirements-dev.txt"]}
+dev = [
+    "clang-format==18.1.3",
+    "einops",
+    "pre-commit>=2.20.0",
+    "pytest",
+    "pytest-forked",
+    "sentencepiece",
+    "tiktoken",
+    "transformers-stream-generator"
+]
