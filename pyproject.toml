@@ -8,27 +8,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepspeed-mii"
-dynamic = ["version", "dependencies"]
-
-[project.dependencies]
-accelerate = "*"
-asyncio = "*"
-deepspeed = ">=0.15.0"
-deepspeed-kernels = "*"
-fastapi = "*"
-fastchat = "*"
-Flask-RESTful = "*"
-grpcio = "*"
-grpcio-tools = "*"
-Pillow = "*"
-pydantic = ">=2.0.0"
-pyzmq = "*"
-safetensors = "*"
-shortuuid = "*"
-torch = "*"
-transformers = "*"
-ujson = "*"
-Werkzeug = "*"
+dynamic = ["version"]
+dependencies = [
+    "accelerate",
+    "asyncio",
+    "deepspeed>=0.15.0",
+    "deepspeed-kernels",
+    "fastapi",
+    "fastchat",
+    "Flask-RESTful",
+    "grpcio",
+    "grpcio-tools",
+    "Pillow",
+    "pydantic>=2.0.0",
+    "pyzmq",
+    "safetensors",
+    "shortuuid",
+    "torch",
+    "transformers",
+    "ujson",
+    "Werkzeug"
+]
 
 [tool.setuptools.dynamic]
 version = {file = ["version.txt"]}
