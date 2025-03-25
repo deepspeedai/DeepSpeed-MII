@@ -1,10 +1,13 @@
 [build-system]
 requires = [
     "setuptools>=64",
-    "wheel",
-    "ninja",
-    "typing-extensions>=4.10.0",
-    "torch"
+    "wheel"
 ]
 # Use legacy backend to import local packages in setup.py
 build-backend = "setuptools.build_meta:__legacy__"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.optional-dependencies]
+dev = {file = ["requirements-dev.txt"]}
