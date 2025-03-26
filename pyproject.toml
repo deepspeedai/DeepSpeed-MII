@@ -9,6 +9,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "deepspeed-mii"
 dynamic = ["version"]
+description = "deepspeed mii"
+long_description = {file = "README.md"}
+long_description_content_type = "text/markdown"
+authors = [{name = "DeepSpeed Team", email = "deepspeed-mii@microsoft.com"}]
+homepage = "http://deepspeed.ai"
+repository = "https://github.com/deepspeedai/DeepSpeed-MII"
 dependencies = [
     "accelerate",
     "asyncio",
@@ -29,6 +35,10 @@ dependencies = [
     "ujson",
     "Werkzeug"
 ]
+
+[project.urls]
+Documentation = "https://github.com/deepspeedai/DeepSpeed-MII"
+Source = "https://github.com/deepspeedai/DeepSpeed-MII"
 
 [tool.setuptools.dynamic]
 version = {file = ["version.txt"]}
