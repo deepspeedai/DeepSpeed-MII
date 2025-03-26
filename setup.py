@@ -8,16 +8,6 @@ import subprocess
 from setuptools import setup, find_packages
 
 
-def fetch_requirements(path):
-    with open(path, 'r') as fd:
-        return [r.strip() for r in fd.readlines()]
-
-
-install_requires = fetch_requirements('requirements/requirements.txt')
-
-extras_require = {"dev": fetch_requirements('requirements/requirements-dev.txt')}
-
-
 def command_exists(cmd):
     if sys.platform == "win32":
         result = subprocess.Popen(f'{cmd}', stdout=subprocess.PIPE, shell=True)
@@ -71,31 +61,7 @@ else:
 with open("mii/version.py", 'w') as fd:
     fd.write(f"__version__ = '{version_str}'\n")
 
-# Parse README.md to make long_description for PyPI page.
-thisdir = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(thisdir, 'README.md'), encoding='utf-8') as fin:
-    readme_text = fin.read()
 print("PACKAGES", find_packages())
 setup(name="deepspeed-mii",
       version=version_str,
-      long_description=readme_text,
-      long_description_content_type='text/markdown',
-      description='deepspeed mii',
-      author='DeepSpeed Team',
-      author_email='deepspeed-mii@microsoft.com',
-      url='http://deepspeed.ai',
-      project_urls={
-          'Documentation': 'https://github.com/deepspeedai/DeepSpeed-MII',
-          'Source': 'https://github.com/deepspeedai/DeepSpeed-MII',
-      },
-      install_requires=install_requires,
-      extras_require=extras_require,
-      packages=find_packages(exclude=("tests",
-                                      )),
-      classifiers=[
-          'Programming Language :: Python :: 3.8',
-          'Programming Language :: Python :: 3.9',
-          'Programming Language :: Python :: 3.10',
-          'Programming Language :: Python :: 3.11',
-          'Programming Language :: Python :: 3.12'
-      ])
+)
