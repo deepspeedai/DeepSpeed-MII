@@ -62,7 +62,7 @@ classifiers = [
 
 [tool.setuptools.package-data]
 long_description = ["README.md"]
-long_description_content_type = "text/markdown"
+long_description_content_type = ["text/markdown"]
 
 [tool.setuptools.packages.find]
 where = ["."]
