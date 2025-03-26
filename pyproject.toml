@@ -36,13 +36,6 @@ dependencies = [
     "Werkzeug"
 ]
 
-[project.urls]
-Documentation = "https://github.com/deepspeedai/DeepSpeed-MII"
-Source = "https://github.com/deepspeedai/DeepSpeed-MII"
-
-[tool.setuptools.dynamic]
-version = {file = ["version.txt"]}
-
 [project.optional-dependencies]
 dev = [
     "clang-format==18.1.3",
@@ -54,3 +47,23 @@ dev = [
     "tiktoken",
     "transformers-stream-generator"
 ]
+
+[project.urls]
+Documentation = "https://github.com/deepspeedai/DeepSpeed-MII"
+Source = "https://github.com/deepspeedai/DeepSpeed-MII"
+
+[tool.setuptools.dynamic]
+version = {file = ["version.txt"]}
+
+[tool.setuptools]
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[tool.setuptools.packages]
+find = true
+exclude = ["tests"]

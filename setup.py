@@ -64,12 +64,4 @@ with open("mii/version.py", 'w') as fd:
 print("PACKAGES", find_packages())
 setup(name="deepspeed-mii",
       version=version_str,
-      packages=find_packages(exclude=("tests",
-                                      )),
-      classifiers=[
-          'Programming Language :: Python :: 3.8',
-          'Programming Language :: Python :: 3.9',
-          'Programming Language :: Python :: 3.10',
-          'Programming Language :: Python :: 3.11',
-          'Programming Language :: Python :: 3.12'
-      ])
+)
