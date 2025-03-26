@@ -10,11 +10,7 @@ build-backend = "setuptools.build_meta"
 name = "deepspeed-mii"
 dynamic = ["version"]
 description = "deepspeed mii"
-long_description = {file = "README.md"}
-long_description_content_type = "text/markdown"
 authors = [{name = "DeepSpeed Team", email = "deepspeed-mii@microsoft.com"}]
-homepage = "http://deepspeed.ai"
-repository = "https://github.com/deepspeedai/DeepSpeed-MII"
 dependencies = [
     "accelerate",
     "asyncio",
@@ -63,6 +59,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
+
+[tool.setuptools.package-data]
+long_description = {file = "README.md"}
+long_description_content_type = "text/markdown"
 
 [tool.setuptools.packages]
 find = true
