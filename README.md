@@ -4,6 +4,7 @@
 [![License Apache 2.0](https://badgen.net/badge/license/apache2.0/blue)](https://github.com/deepspeedai/DeepSpeed/blob/master/LICENSE)
 [![PyPI version](https://badge.fury.io/py/deepspeed-mii.svg)](https://pypi.org/project/deepspeed-mii/)
 <!-- [![Documentation Status](https://readthedocs.org/projects/deepspeed/badge/?version=latest)](https://deepspeed.readthedocs.io/en/latest/?badge=latest) -->
+[![gitcgr](https://gitcgr.com/badge/deepspeedai/DeepSpeed-MII.svg)](https://gitcgr.com/deepspeedai/DeepSpeed-MII)
 
 <div align="center">
  <img src="docs/images/mii-white.svg#gh-light-mode-only" width="400px">
