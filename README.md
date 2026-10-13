@@ -10,6 +10,10 @@
  <img src="docs/images/mii-dark.svg#gh-dark-mode-only" width="400px">
 </div>
 
+<p align="center">
+  <b>English</b> · <a href="https://github.com/deepspeedai/DeepSpeed-MII/blob/main/README.zh.md">简体中文</a>
+</p>
+
 ## Latest News
 
 * [2024/01] [DeepSpeed-FastGen: Introducting Mixtral, Phi-2, and Falcon support with major performance and feature enhancements.](https://github.com/deepspeedai/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19)
